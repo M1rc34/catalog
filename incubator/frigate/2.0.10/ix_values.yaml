@@ -1,7 +1,7 @@
 image:
   repository: blakeblackshear/frigate
   pullPolicy: IfNotPresent
-  tag: 0.10.0-beta6-amd64nvidia
+  tag: stable-amd64
 
 securityContext:
   readOnlyRootFilesystem: false
@@ -427,16 +427,16 @@ ingress:
 
 frigate:
   mqtt:
-    host: mosquitto.ix-mosquitto.svc.cluster.local
+    host: 192.168.8.115
     port: 1883
     authentitcated: false
-    username: mqtt_user
-    password: password
+    username: homeassistant
+    password: eoZ2aeVeihaezie0eik7Naz5hai5AuhahR8uebahcha5oolael2vo0ieb1ouLaet
   birdseye:
     enabled: true
     mode: motion
   cameras:
-    - name: camera1
+    - name: Fata2
       objects:
         # Optional: list of objects to track from labelmap.txt (default: shown below)
         track:
@@ -451,13 +451,13 @@ frigate:
       inputs:
         # Required: the path to the stream
         # NOTE: path may include environment variables, which must begin with 'FRIGATE_' and be referenced in {}
-        - path: rtsp://username:password@highres.url
+        - path: rtsp://admin:Afaraesoare1234@192.168.8.112:554/Streaming/Channels/101
           # Required: list of roles for this stream. valid values are: detect,record,rtmp
           # NOTICE: In addition to assigning the record, and rtmp roles,
           # they must also be enabled in the camera config.
           roles:
             - record
-        - path: rtsp://username:password@lowres.url
+        - path: rtsp://admin:Afaraesoare1234@192.168.8.112:554/Streaming/Channels/102
           roles:
             - detect
             - rtmp
