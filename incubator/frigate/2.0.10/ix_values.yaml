@@ -274,12 +274,6 @@ configmap:
             objects:
               person: 15
 
-        # Optional: RTMP configuration
-        # NOTE: Can be overridden at the camera level
-        rtmp:
-          # Optional: Enable the RTMP stream (default: True)
-          enabled: True
-
         # Optional: in-feed timestamp style configuration
         # NOTE: Can be overridden at the camera level
         # timestamp_style:
