@@ -107,6 +107,13 @@ configmap:
         ffmpeg:
           # Optional: global ffmpeg args (default: shown below) warning instead of debug
           global_args: -hide_banner -loglevel debug
+          hwaccel_args:
+            - -hwaccel
+            - vaapi
+            - -hwaccel_device
+            - /dev/dri/renderD128
+            - -hwaccel_output_format
+            - yuv420p
           # Optional: global hwaccel args (default: shown below)
           # NOTE: See hardware acceleration docs for your specific device
           # hwaccel_args: []
@@ -391,6 +398,10 @@ frigate:
           - motorcyle
           - cat
           - dog
+        filters:
+          person:
+            min_score: 0.4
+            threshold: 0.6
       detect:
         height: 720
         width: 1280
