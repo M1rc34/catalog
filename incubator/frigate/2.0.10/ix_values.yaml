@@ -137,7 +137,7 @@ configmap:
           height: 720
           # Optional: desired fps for your camera for the input with the detect role (default: shown below)
           # NOTE: Recommended value of 5. Ideally, try and reduce your FPS on the camera.
-          fps: 5
+          fps: 6
           # Optional: enables detection for the camera (default: True)
           # This value can be set via MQTT and will be updated in startup based on retained value
           enabled: True
@@ -217,7 +217,7 @@ configmap:
             # Optional: Number of days to retain recordings regardless of events (default: shown below)
             # NOTE: This should be set to 0 and retention should be defined in events section below
             #       if you only want to retain recordings of events.
-            days: 7
+            days: 1
             # Optional: Mode for retention. Available options are: all, motion, and active_objects
             #   all - save all recording segments regardless of activity
             #   motion - save all recordings segments with any detected motion
@@ -242,7 +242,7 @@ configmap:
             # Optional: Retention settings for recordings of events
             retain:
               # Required: Default retention days (default: shown below)
-              default: 14
+              default: 1
               # Optional: Mode for retention. (default: shown below)
               #   all - save all recording segments for events regardless of activity
               #   motion - save all recordings segments for events with any detected motion
@@ -276,10 +276,10 @@ configmap:
           # Optional: Camera override for retention settings (default: global values)
           retain:
             # Required: Default retention days (default: shown below)
-            default: 10
+            default: 3
             # Optional: Per object retention days
             objects:
-              person: 15
+              person: 5
 
         # Required
         cameras:
@@ -402,6 +402,12 @@ frigate:
           person:
             min_score: 0.4
             threshold: 0.6
+          dog:
+            min_score: 0.4
+            threshold: 0.6      
+          cat:
+            min_score: 0.4
+            threshold: 0.6  
       detect:
         height: 720
         width: 1280
