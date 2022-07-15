@@ -205,7 +205,7 @@ configmap:
           # frame_height: 50
           # Optional: motion mask
           # NOTE: see docs for more detailed info on creating masks
-          # mask: 0,900,1080,900,1080,1920,0,1920
+          #mask: 458,0,0,0,0,196,99,125,246,63
 
         # Optional: Record configuration
         # NOTE: Can be overridden at the camera level
@@ -386,7 +386,7 @@ frigate:
     username: homeassistant
     password: eoZ2aeVeihaezie0eik7Naz5hai5AuhahR8uebahcha5oolael2vo0ieb1ouLaet
   birdseye:
-    enabled: true
+    enabled: false
     mode: motion
   cameras:
     - name: Fata2
@@ -426,6 +426,8 @@ frigate:
             - rtmp
       record:
         enabled: True
+      motion:
+        mask: 458,0,0,0,0,196,99,125,246,63
       # Optional: timeout for highest scoring image before allowing it
       # to be replaced by a newer image. (default: shown below)
       best_image_timeout: 60
