@@ -448,4 +448,9 @@ persistence:
     mountPath: "/media"
   frigate-config:
     enabled: true
-    mountPath: "/config"
+    mountPath: "/config/config.yml"
+    subPath: "config.yml"
+    type: "custom"
+    volumeSpec:
+      configMap:
+        name: '{{ template "tc.common.names.fullname" . }}-config'
