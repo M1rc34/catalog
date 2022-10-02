@@ -1,6 +1,6 @@
 image:
   repository: blakeblackshear/frigate
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: stable-amd64
 
 securityContext:
