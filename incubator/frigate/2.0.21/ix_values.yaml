@@ -1,6 +1,6 @@
 image:
   repository: blakeblackshear/frigate
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   tag: 0.11.0
 
 securityContext:
