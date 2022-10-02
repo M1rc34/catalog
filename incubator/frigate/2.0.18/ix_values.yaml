@@ -1,7 +1,7 @@
 image:
   repository: blakeblackshear/frigate
   pullPolicy: Always
-  tag: stable-amd64
+  tag: 0.11.0-amd64
 
 securityContext:
   readOnlyRootFilesystem: false
